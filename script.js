@@ -11,5 +11,6 @@ window.onload = function () {
       coin.style.transform = "translateY(0) rotateY(1620deg)";
       result.textContent = "Tails";
     }
-  }, 1500); // Matches the flip animation timing
+  }, 600); // start after hand flicks
 };
+
