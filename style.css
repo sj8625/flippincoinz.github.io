@@ -51,7 +51,7 @@ body {
     transform: translateY(0) rotateY(0deg);
   }
   50% {
-    transform: translateY(-150px) rotateY(720deg);
+    transform: translateY(-180px) rotateY(720deg);
   }
   100% {
     transform: translateY(0) rotateY(1440deg);
