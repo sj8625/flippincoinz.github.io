@@ -18,6 +18,7 @@ body {
   display: inline-block;
   animation: flick 0.3s ease-out forwards;
   animation-delay: 0.5s;
+  z-index: 1;
 }
 
 #coin {
