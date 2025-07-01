@@ -23,8 +23,9 @@ body {
 #coin {
   font-size: 2.5rem;
   position: absolute;
-  top: 0; /* ✅ sits directly on the hand */
+  top: -10px; /* adjust this to sit right on the fingers */
   left: 25px;
+  z-index: 2; /* 👈 this puts it above the hand */
   animation: flip 1.5s ease-in-out forwards;
   animation-delay: 0.6s;
   transform-origin: bottom center;
