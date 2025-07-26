@@ -1,56 +1,46 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-  position: relative;
   text-align: center;
 }
 
-.thumb {
-  width: 200px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.coin {
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 80px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/2006_1C_Obv.png/800px-2006_1C_Obv.png');
-  background-size: cover;
-  background-position: center;
+#coin-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 1.2s ease;
-  z-index: 10;
+  transition: transform 0.6s ease;
 }
 
-#flipButton {
-  margin-top: 120px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+#flip-button {
+  margin-top: 30px;
   padding: 12px 24px;
   font-size: 18px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 6px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#flip-button:hover {
+  background-color: darkgreen;
 }
 
 #result {
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
 }
