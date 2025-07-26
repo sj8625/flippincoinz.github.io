@@ -1,11 +1,16 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   height: 100vh;
+  background-color: white;
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
-  font-family: sans-serif;
 }
 
 .container {
@@ -14,28 +19,28 @@ body {
 }
 
 .thumb {
-  font-size: 80px;
+  font-size: 100px;
   transform: translateY(-1cm);
 }
 
 #coin {
   width: 80px;
   position: absolute;
-  top: calc(50% - 80px); /* above thumb */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -170px);
   transition: transform 1s ease-in-out;
 }
 
 #flipButton {
-  margin-top: 150px;
+  margin-top: 120px;
   padding: 10px 20px;
+  font-size: 18px;
   background-color: green;
   color: white;
   border: none;
-  font-size: 18px;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 6px;
 }
 
 #result {
