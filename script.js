@@ -3,15 +3,17 @@ const button = document.getElementById('flipButton');
 const result = document.getElementById('result');
 
 button.addEventListener('click', () => {
-  result.textContent = ''; // Clear result
+  result.textContent = '';
   coin.style.transition = 'transform 1s ease-in-out';
-  coin.style.transform = 'translate(-50%, -200px) rotateY(1080deg)';
+  
+  // Flip up
+  coin.style.transform = 'translate(-50%, -300px) rotateY(1080deg)';
 
   setTimeout(() => {
-    // Bring the coin back down
-    coin.style.transform = 'translate(-50%, 0) rotateY(1800deg)';
+    // Fall back down
+    coin.style.transform = 'translate(-50%, -170px) rotateY(1800deg)';
 
-    // Show result
+    // Show heads/tails after animation
     setTimeout(() => {
       const side = Math.random() < 0.5 ? 'Heads' : 'Tails';
       result.textContent = side;
