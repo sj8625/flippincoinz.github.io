@@ -1,23 +1,19 @@
-document.getElementById("flipButton").addEventListener("click", flipCoin);
+document.getElementById("flip-button").addEventListener("click", flipCoin);
 
 function flipCoin() {
-  const coin = document.getElementById('coin');
-  const resultDiv = document.getElementById('result');
+  const coin = document.getElementById("coin-image");
+  const resultDiv = document.getElementById("result");
 
-  resultDiv.textContent = '';
+  // Reset any previous result
+  resultDiv.textContent = "";
 
-  // Start flip animation
-  coin.style.transform = 'translateX(-50%) rotateY(720deg)';
+  // Trigger flip animation
+  coin.style.transform = "rotateY(720deg)";
 
   setTimeout(() => {
-    coin.style.transform = 'translateX(-50%) rotateY(0deg)';
+    coin.style.transform = "rotateY(0deg)";
 
-    const isHeads = Math.random() < 0.5;
-    const imageURL = isHeads
-      ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/2006_1C_Obv.png/800px-2006_1C_Obv.png' // Heads
-      : 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/2005_1C_Rev.png/800px-2005_1C_Rev.png'; // Tails
-
-    coin.style.backgroundImage = `url('${imageURL}')`;
-    resultDiv.textContent = isHeads ? 'Heads' : 'Tails';
+    const result = Math.random() < 0.5 ? "Heads" : "Tails";
+    resultDiv.textContent = result;
   }, 1200);
 }
