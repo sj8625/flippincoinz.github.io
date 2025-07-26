@@ -8,13 +8,14 @@ body {
   height: 100vh;
   background-color: white;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 .container {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
@@ -26,9 +27,9 @@ body {
 #coin {
   width: 80px;
   position: absolute;
-  top: 50%;
+  top: -60px; /* sits just above thumb */
   left: 50%;
-  transform: translate(-50%, -170px);
+  transform: translateX(-50%);
   transition: transform 1s ease-in-out;
 }
 
