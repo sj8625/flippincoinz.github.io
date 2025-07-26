@@ -1,22 +1,35 @@
-const coin = document.getElementById('coin');
-const button = document.getElementById('flipButton');
-const result = document.getElementById('result');
+window.onload = function () {
+function flipCoin() {
+  const coin = document.getElementById('coin');
+  const resultDiv = document.getElementById('result');
 
-button.addEventListener('click', () => {
-  result.textContent = '';
-  coin.style.transition = 'transform 1s ease-in-out';
-  
-  // Flip up
-  coin.style.transform = 'translate(-50%, -300px) rotateY(1080deg)';
+  // Reset result and begin flip
+  resultDiv.textContent = '';
+  coin.style.transform = 'translateX(-50%) rotateY(720deg)';
 
   setTimeout(() => {
-    // Fall back down
-    coin.style.transform = 'translate(-50%, -170px) rotateY(1800deg)';
+    const isHeads = Math.random() < 0.5;
+    const coin = document.getElementById("coin");
+    const result = document.getElementById("result");
+    // Flip complete, reset rotation
+    coin.style.transform = 'translateX(-50%) rotateY(0deg)';
 
-    // Show heads/tails after animation
-    setTimeout(() => {
-      const side = Math.random() < 0.5 ? 'Heads' : 'Tails';
-      result.textContent = side;
-    }, 1000);
-  }, 1000);
-});
+    if (isHeads) {
+      coin.style.transform = "translateY(0) rotateY(1440deg)";
+      result.textContent = "Heads";
+    } else {
+      coin.style.transform = "translateY(0) rotateY(1620deg)";
+      result.textContent = "Tails";
+    }
+  }, 600); // start after hand flicks
+};
+    // Choose result
+    const isHeads = Math.random() < 0.5;
+    const imageURL = isHeads
+      ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/2006_1C_Obv.png/800px-2006_1C_Obv.png' // Heads
+      : 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/2005_1C_Rev.png/800px-2005_1C_Rev.png'; // Tails
+
+    coin.style.backgroundImage = `url('${imageURL}')`;
+    resultDiv.textContent = isHeads ? 'Heads' : 'Tails';
+  }, 1200);
+}
