@@ -5,90 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coin Flip Animation</title>
   <link rel="stylesheet" href="styles.css" />
-  <div class="container">
-    <img src="your-thumb-image.png" alt="Thumb" class="thumb" />
-    <div class="coin"></div>
-  </div>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .emoji-container {
-      position: relative;
-      font-size: 96px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 40px; /* space before the flip button */
-    }
-
-    .coin {
-      position: absolute;
-      top: -60px; /* Adjust this to sit on emoji finger tip */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 60px;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/2006_1C_Obv.png/800px-2006_1C_Obv.png');
-      background-size: cover;
-      border-radius: 50%;
-      transition: transform 1.2s ease;
-    }
-
-    #flipButton {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-      margin-bottom: 20px;
-    }
-
-    #result {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-    }
-  </style>
 </head>
 <body>
+  <div class="container">
+    <img src="your-thumb-image.png" alt="Thumb" class="thumb" />
+    <div class="coin" id="coin"></div>
+    <button id="flipButton" onclick="flipCoin()">Flip</button>
+    <div id="result"></div>
+  </div>
 
-<div class="emoji-container">
-  <div class="coin" id="coin"></div>
-</div>
-
-  <button id="flipButton" onclick="flipCoin()">Flip</button>
-  <div id="result"></div>
-
-  <script>
-    function flipCoin() {
-      const coin = document.getElementById('coin');
-      const resultDiv = document.getElementById('result');
-      resultDiv.textContent = '';
-
-      coin.style.transform = 'translateX(-50%) translateY(-150px) rotateY(720deg)';
-
-      setTimeout(() => {
-        coin.style.transform = 'translateX(-50%) translateY(0px) rotateY(0deg)';
-
-        const result = Math.random() < 0.5 ? 'Heads' : 'Tails';
-        resultDiv.textContent = result;
-      }, 1200);
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
