@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
   background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,20 +11,19 @@ body {
 
 .container {
   position: relative;
-  width: 400px;
-  height: auto;
+  text-align: center;
 }
 
 .thumb {
-  width: 100%;
+  width: 150px;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .coin {
   position: absolute;
-  top: -70px;       /* raises coin above the thumb tip */
-  left: 52%;        /* shifts coin slightly right */
+  top: -80px;
+  left: 50%;
   transform: translateX(-50%);
   width: 80px;
   height: 80px;
@@ -33,5 +32,25 @@ body {
   background-position: center;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 1.2s ease;
   z-index: 10;
+}
+
+#flipButton {
+  margin-top: 120px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
 }
