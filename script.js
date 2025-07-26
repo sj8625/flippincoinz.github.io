@@ -1,19 +1,15 @@
-document.getElementById("flip-button").addEventListener("click", flipCoin);
+document.getElementById("flip-button").addEventListener("click", () => {
+  const coin = document.getElementById("coin");
+  const result = document.getElementById("result");
 
-function flipCoin() {
-  const coin = document.getElementById("coin-image");
-  const resultDiv = document.getElementById("result");
+  result.textContent = "";
 
-  // Reset any previous result
-  resultDiv.textContent = "";
-
-  // Trigger flip animation
+  // Animate flip
   coin.style.transform = "rotateY(720deg)";
 
   setTimeout(() => {
     coin.style.transform = "rotateY(0deg)";
-
-    const result = Math.random() < 0.5 ? "Heads" : "Tails";
-    resultDiv.textContent = result;
+    const outcome = Math.random() < 0.5 ? "Heads" : "Tails";
+    result.textContent = outcome;
   }, 1200);
-}
+});
