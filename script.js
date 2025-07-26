@@ -1,16 +1,17 @@
+document.getElementById("flipButton").addEventListener("click", flipCoin);
+
 function flipCoin() {
   const coin = document.getElementById('coin');
   const resultDiv = document.getElementById('result');
 
-  // Reset result and begin flip
   resultDiv.textContent = '';
+
+  // Start flip animation
   coin.style.transform = 'translateX(-50%) rotateY(720deg)';
 
   setTimeout(() => {
-    // Flip complete, reset rotation
     coin.style.transform = 'translateX(-50%) rotateY(0deg)';
 
-    // Choose result
     const isHeads = Math.random() < 0.5;
     const imageURL = isHeads
       ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/2006_1C_Obv.png/800px-2006_1C_Obv.png' // Heads
