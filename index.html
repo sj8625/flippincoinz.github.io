@@ -12,14 +12,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div id="hand">
-      👍
-      <div id="coin">🪙</div>
-    </div>
-    <div id="result"></div>
-  </div>
-  <script src="script.js"></script>
+  <!-- Flip Button -->
+<div style="text-align: center; margin-top: 20px;">
+  <button id="flipButton" 
+    style="
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    "
+    onclick="flipCoin()"
+  >
+    Flip
+  </button>
+</div>
 </body>
 </html>
 
