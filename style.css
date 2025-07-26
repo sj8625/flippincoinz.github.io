@@ -1,51 +1,86 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  height: 100vh;
-  background-color: white;
+  margin: 0;
+  background-color: lavender;
+  padding: 0;
+  background-color: #f0f0f0;
   font-family: Arial, sans-serif;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  position: relative;
+  width: 400px;
+  height: auto;
 }
 
+#hand {
+  font-size: 5rem;
+  position: relative;
+  display: inline-block;
+  animation: flick 0.3s ease-out forwards;
+  animation-delay: 0.5s;
+  z-index: 1;
 .thumb {
-  font-size: 100px;
-  transform: translateY(-1cm);
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #coin {
-  width: 80px;
+  font-size: 2.5rem;
+.coin {
   position: absolute;
-  top: -60px; /* sits just above thumb */
-  left: 50%;
-  transform: translateX(-50%);
-  transition: transform 1s ease-in-out;
-}
-
-#flipButton {
-  margin-top: 120px;
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  top: -10px; /* adjust this to sit right on the fingers */
+  left: 25px;
+  z-index: 2; /* 👈 this puts it above the hand */
+  animation: flip 1.5s ease-in-out forwards;
+  animation-delay: 0.6s;
+  transform-origin: bottom center;
 }
 
 #result {
-  margin-top: 20px;
-  font-size: 24px;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 2rem;
   font-weight: bold;
+  opacity: 0;
+  animation: showResult 0.3s ease-in forwards;
+  animation-delay: 2s;
+}
+
+@keyframes flick {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-20px) rotate(-10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes flip {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-180px) rotateY(720deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(1440deg);
+  }
+}
+
+@keyframes showResult {
+  to { opacity: 1; }
+  top: -70px;       /* raises coin above the thumb tip */
+  left: 52%;        /* shifts coin slightly right */
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/2006_1C_Obv.png/800px-2006_1C_Obv.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
