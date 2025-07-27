@@ -11,4 +11,4 @@ window.onload = function () {
       coin.style.transform = "translateY(0) rotateY(1620deg)";
       result.textContent = "Tails";
     }
-  }, 600); // start after hand flicks
+  }, 2000); // start after hand flicks
