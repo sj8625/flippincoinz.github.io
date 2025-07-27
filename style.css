@@ -1,9 +1,6 @@
 body {
   margin: 0;
   background-color: lavender;
-  padding: 0;
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +10,6 @@ body {
 
 .container {
   position: relative;
-  width: 400px;
-  height: auto;
 }
 
 #hand {
@@ -24,15 +19,10 @@ body {
   animation: flick 0.3s ease-out forwards;
   animation-delay: 0.5s;
   z-index: 1;
-.thumb {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #coin {
   font-size: 2.5rem;
-.coin {
   position: absolute;
   top: -10px; /* adjust this to sit right on the fingers */
   left: 25px;
@@ -72,15 +62,4 @@ body {
 
 @keyframes showResult {
   to { opacity: 1; }
-  top: -70px;       /* raises coin above the thumb tip */
-  left: 52%;        /* shifts coin slightly right */
-  transform: translateX(-50%);
-  width: 80px;
-  height: 80px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/2006_1C_Obv.png/800px-2006_1C_Obv.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 10;
 }
