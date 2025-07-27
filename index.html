@@ -20,18 +20,6 @@
     <div id="result"></div>
   </div>
   <script src="script.js"></script>
-  // Get the result element
-const resultDiv = document.getElementById("result");
 
-// Define the coin flip logic
-function flipCoin() {
-  const result = Math.random() < 0.5 ? "Heads" : "Tails";
-  resultDiv.textContent = result;
-}
-
-// Trigger the result reveal in sync with animation
-setTimeout(() => {
-  flipCoin();
-}, 2000); // Waits 2 seconds to match the CSS animation-delay
 </body>
 </html>
