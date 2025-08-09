@@ -24,12 +24,11 @@ body {
 #coin {
   font-size: 2.5rem;
   position: absolute;
-  top: -10px; /* adjust this to sit right on the fingers */
+  top: -10px;
   left: 25px;
-  z-index: 2; /* 👈 this puts it above the hand */
-  animation: flip 1.5s ease-in-out forwards;
-  animation-delay: 0.6s;
+  z-index: 2;
   transform-origin: bottom center;
+  transition: transform 1.5s ease-in-out;
 }
 
 #result {
@@ -61,4 +60,5 @@ body {
 @keyframes showResult {
   to { opacity: 1; }
 }
+
 
