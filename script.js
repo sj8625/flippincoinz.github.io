@@ -16,3 +16,8 @@ function flipCoin() {
   void result.offsetWidth;
   result.style.animation = "showResult 0.3s ease-in forwards";
 }
+window.onload = function () {
+  setTimeout(() => {
+    flipCoin(); // This calls the function after 2 seconds
+  }, 2000);
+};
