@@ -4,10 +4,11 @@ function flipCoin() {
   const result = document.getElementById("result");
 
   if (isHeads) {
-    coin.style.transform = "translateY(0) rotateY(1440deg)";
+    coin.style.animation = "none";
+    void coin.offsetWidth;
     result.textContent = "Heads";
   } else {
-    coin.style.transform = "translateY(0) rotateY(1620deg)";
+    coin.style.animation = "flipCoin 1.5s ease-in-out forwards";
     result.textContent = "Tails";
   }
 
@@ -24,3 +25,4 @@ window.onload = function () {
 };
 
 document.getElementById("flipButton").addEventListener("click", flipCoin);
+
