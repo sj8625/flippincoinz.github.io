@@ -41,13 +41,13 @@ body {
 
 @keyframes flipCoin {
   0% {
-    transform: translateY(0) rotateY(0deg);
+    transform: translateY(0) rotateX(0deg);
   }
   50% {
-    transform: translateY(-180px) rotateY(720deg);
+    transform: translateY(-180px) rotateX(720deg);
   }
   100% {
-    transform: translateY(0) rotateY(1440deg);
+    transform: translateY(0) rotateX(1440deg);
   }
 }
 
