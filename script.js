@@ -3,19 +3,21 @@ function flipCoin() {
   const coin = document.getElementById("coin");
   const result = document.getElementById("result");
 
-  if (isHeads) {
-    coin.style.animation = "none";
-    void coin.offsetWidth;
-    result.textContent = "Heads";
-  } else {
-    coin.style.animation = "flipCoin 1.5s ease-in-out forwards";
-    result.textContent = "Tails";
-  }
+  // ✅ Reset coin animation
+  coin.style.animation = "none";
+  void coin.offsetWidth; // Force reflow
 
-  result.style.opacity = "0";
-  result.style.animation = "none";
-  void result.offsetWidth;
-  result.style.animation = "showResult 0.3s ease-in forwards";
+  // ✅ Apply flip animation
+  coin.style.animation = "flipCoin 1.5s ease-in-out forwards";
+
+  // ✅ Delay result until animation finishes
+  setTimeout(() => {
+    result.textContent = isHeads ? "Heads" : "Tails";
+    result.style.opacity = "0";
+    result.style.animation = "none";
+    void result.offsetWidth;
+    result.style.animation = "showResult 0.3s ease-in forwards";
+  }, 1500); // Match animation duration
 }
 
 window.onload = function () {
@@ -25,4 +27,3 @@ window.onload = function () {
 };
 
 document.getElementById("flipButton").addEventListener("click", flipCoin);
-
