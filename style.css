@@ -66,15 +66,18 @@ body {
 .hand-container {
   position: relative;
   display: inline-block;
+  perspective: 1000px; /* 👈 Add this line */
 }
 
 #coin {
   font-size: 2.5rem;
   position: absolute;
-  top: -30px; /* Moves coin above the thumb */
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
   transform-origin: center;
+  transform-style: preserve-3d; /* 👈 Add this line */
   transition: transform 1.5s ease-in-out;
 }
+
