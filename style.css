@@ -41,13 +41,13 @@ body {
 
 @keyframes flipCoin {
   0% {
-    transform: translateX(-50%) rotateX(0deg) translateY(0);
+    transform: translateX(-50%) translateY(0) rotateX(0deg);
   }
   50% {
-    transform: translateX(-50%) rotateX(180deg) translateY(-180px);
+    transform: translateX(-50%) translateY(-150px) rotateX(180deg);
   }
   100% {
-    transform: translateX(-50%) rotateX(360deg) translateY(0);
+    transform: translateX(-50%) translateY(0) rotateX(360deg);
   }
 }
 
@@ -74,11 +74,12 @@ body {
   position: absolute;
   top: -30px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(0);
   z-index: 2;
   transform-origin: center center; /* ✅ Flip from the thumb */
-  transform-style: preserve-3d; /* 👈 Add this line */
+  transform-style: flat; /* 👈 Add this line */
   transition: transform 1.5s ease-in-out;
 }
+
 
 
