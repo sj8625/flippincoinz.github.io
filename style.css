@@ -44,10 +44,10 @@ body {
     transform: translateX(-50%) rotateX(0deg) translateY(0);
   }
   50% {
-    transform: translateX(-50%) rotateX(360deg) translateY(-180px);
+    transform: translateX(-50%) rotateX(180deg) translateY(-180px);
   }
   100% {
-    transform: translateX(-50%) rotateX(720deg) translateY(0);
+    transform: translateX(-50%) rotateX(360deg) translateY(0);
   }
 }
 
@@ -76,8 +76,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  transform-origin: bottom center; /* ✅ Flip from the thumb */
+  transform-origin: center center; /* ✅ Flip from the thumb */
   transform-style: preserve-3d; /* 👈 Add this line */
   transition: transform 1.5s ease-in-out;
 }
+
 
