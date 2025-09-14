@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background-color: lavender;
+  background-color: linear-gradient(to bottom right, #1ca9c9, #87ceeb); /* Ocean to Sky Blue */
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,6 +81,7 @@ body {
   transform-style: flat; /* 👈 Add this line */
   transition: transform 1.5s ease-in-out;
 }
+
 
 
 
