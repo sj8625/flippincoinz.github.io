@@ -9,12 +9,6 @@ body {
   overflow: hidden;
 }
 
-/* Mobile Ad Containers */
-.ad-mobile-top,
-.ad-mobile-bottom {
-  display: none;
-}
-
 .container {
   position: relative;
   display: flex;
@@ -87,3 +81,4 @@ body {
   transform-style: flat; /* 👈 Add this line */
   transition: transform 1.5s ease-in-out;
 }
+
