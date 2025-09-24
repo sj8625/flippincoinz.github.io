@@ -82,3 +82,14 @@ body {
   transition: transform 1.5s ease-in-out;
 }
 
+.site-title {
+  position: relative;
+  top: -20px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
