@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: linear-gradient(to bottom right, #1ca9c9, #87ceeb); /* Ocean to Sky Blue */
+  background-color: #cceeff; /* Soft light blue */
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -96,3 +96,4 @@ body {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 100;
 }
+
