@@ -32,7 +32,10 @@ body {
   color: #444;
   opacity: 0;
   animation: showResult 0.3s ease-in forwards;
-  margin-top: 20px; /* Try 20px or 24px for subtle spacing */
+}
+
+#flipButton {
+  margin-top: 24px; /* 👈 This adds breathing room below the result */
 }
 
 @keyframes flick {
@@ -97,3 +100,4 @@ body {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 100;
 }
+
