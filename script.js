@@ -1,3 +1,7 @@
+// Initialize counts from localStorage or start at 0
+let headsCount = parseInt(localStorage.getItem('heads')) || 0;
+let tailsCount = parseInt(localStorage.getItem('tails')) || 0;
+
 function flipCoin() {
   const isHeads = Math.random() < 0.5;
   const coin = document.getElementById("coin");
@@ -20,10 +24,16 @@ function flipCoin() {
   }, 1500); // Match animation duration
 }
 
+// Display saved counts on page load
 window.onload = function () {
+  document.getElementById('headsCount').textContent = headsCount;
+  document.getElementByID('tailsCount').textContent = tailsCount;
+  
+  // Auto-flip after 2 seconds
   setTimeout(() => {
     flipCoin(); // This calls the function after 2 seconds
   }, 2000);
 };
 
+// Flip on button click
 document.getElementById("flipButton").addEventListener("click", flipCoin);
