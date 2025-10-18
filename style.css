@@ -38,6 +38,21 @@ body {
   margin-top: 24px; /* 👈 This adds breathing room below the result */
 }
 
+.stats-box {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffffcc;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+  color: #222;
+  text-align: left;
+  line-height: 1.6;
+}
+
 @keyframes flick {
   0% { transform: translateY(0); }
   30% { transform: translateY(-20px) rotate(-10deg); }
@@ -100,4 +115,5 @@ body {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 100;
 }
+
 
