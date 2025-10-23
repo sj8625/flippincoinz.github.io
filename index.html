@@ -25,22 +25,23 @@
 <body>
   <h1 class="site-title">Flip a coin. Decide your fate</h1>
   
-  <div class="container"> 
-    <div class="hand-container">
-      <div id="hand">👍</div>
-      <div id="coin">🪙</div>
+  <div class="main-row">
+    <div class="container">
+      <div class="hand-container">
+        <div id="hand">👍</div>
+        <div id="coin">🪙</div>
+      </div>
+      <div id="result">Tails</div>
+      <button id="flipButton">Flip Coin</button>
     </div>
-    <div id="result">Tails</div>
-    <button id="flipButton">Flip Coin</button>
-  </div>
 
   <!-- Stats box on the right side -->
-  <div class="stats-box">
-    <p><strong>Heads:</strong> <span id="headsCount">0</span></p>
-    <p><strong>Tails:</strong> <span id="tailsCount">0</span></p>
+    <div class="stats-box">
+      <p><strong>Heads:</strong> <span id="headsCount">0</span></p>
+      <p><strong>Tails:</strong> <span id="tailsCount">0</span></p>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
