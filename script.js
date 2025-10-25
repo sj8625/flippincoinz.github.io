@@ -1,6 +1,7 @@
 // Initialize counts from localStorage or start at 0
 let headsCount = parseInt(localStorage.getItem('heads')) || 0;
 let tailsCount = parseInt(localStorage.getItem('tails')) || 0;
+let streakCount = parseInt(localStorage.getItem('streak')) || 0;
 
 function flipCoin() {
   const isHeads = Math.random() < 0.5;
@@ -16,11 +17,28 @@ function flipCoin() {
 
   // ✅ Delay result until animation finishes
   setTimeout(() => {
-    result.textContent = isHeads ? "Heads" : "Tails";
+    const outcome = isHeads ? "Heads" : "Tails";
+    result.textContent = outcome;
     result.style.opacity = "0";
     result.style.animation = "none";
     void result.offsetWidth;
     result.style.animation = "showResult 0.3s ease-in forwards";
+    
+    // ✅ Update Heads/Tails counters
+    if (isHeads) {
+      headsCount++;
+      localStorage.setItem('heads', headsCount);
+      document.getElementById('headsCount').textContent = headsCount;
+    } else {
+      tailsCount++;
+      localStorage.setItem('tails', tailsCount);
+      document.getElementById('tailsCount').textContent = tailsCount;
+    }
+
+    // ✅ Update streak counter
+    streakCount++;
+    localStorage.setItem('streak', streakCount);
+    document.getElementById('streakCount').textContent = streakCount;
   }, 1500); // Match animation duration
 }
 
@@ -28,6 +46,7 @@ function flipCoin() {
 window.onload = function () {
   document.getElementById('headsCount').textContent = headsCount;
   document.getElementById('tailsCount').textContent = tailsCount;
+  document.getElementById('streakCount').textContent = streakCount;
   
   // Auto-flip after 2 seconds
   setTimeout(() => {
@@ -37,4 +56,3 @@ window.onload = function () {
 
 // Flip on button click
 document.getElementById("flipButton").addEventListener("click", flipCoin);
-
