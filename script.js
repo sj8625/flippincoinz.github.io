@@ -27,7 +27,7 @@ function flipCoin() {
 // Display saved counts on page load
 window.onload = function () {
   document.getElementById('headsCount').textContent = headsCount;
-  document.getElementByID('tailsCount').textContent = tailsCount;
+  document.getElementById('tailsCount').textContent = tailsCount;
   
   // Auto-flip after 2 seconds
   setTimeout(() => {
@@ -37,3 +37,4 @@ window.onload = function () {
 
 // Flip on button click
 document.getElementById("flipButton").addEventListener("click", flipCoin);
+
