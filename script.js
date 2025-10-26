@@ -42,6 +42,7 @@ function flipCoin() {
   }, 1500); // Match animation duration
 }
 
+// ✅ Wrap all DOM-dependent logic inside window.onload
 // Display saved counts on page load
 window.onload = function () {
   document.getElementById('headsCount').textContent = headsCount;
@@ -52,7 +53,6 @@ window.onload = function () {
   setTimeout(() => {
     flipCoin(); // This calls the function after 2 seconds
   }, 2000);
-};
 
 // Flip on button click
 document.getElementById("flipButton").addEventListener("click", flipCoin);
@@ -64,4 +64,3 @@ document.getElementById("flipButton").addEventListener("click", flipCoin);
     document.getElementById('streakCount').textContent = streakCount;
   });
 };
-
