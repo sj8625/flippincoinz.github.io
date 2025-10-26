@@ -56,3 +56,10 @@ window.onload = function () {
 
 // Flip on button click
 document.getElementById("flipButton").addEventListener("click", flipCoin);
+
+// Reset streak button logic
+document.getElementById("resetStreakButton").addEventListener("click", () => {
+  streakCount = 0;
+  localStorage.setItem('streak', streakCount);
+  document.getElementById('streakCount').textContent = streakCount;
+});
