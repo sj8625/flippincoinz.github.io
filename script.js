@@ -63,4 +63,16 @@ document.getElementById("flipButton").addEventListener("click", flipCoin);
     localStorage.setItem('streak', streakCount);
     document.getElementById('streakCount').textContent = streakCount;
   });
+  
+  // ✅ Reset stats button logic (Heads + Tails)
+  document.getElementById("resetStatsButton").addEventListener("click", () => {
+    headsCount = 0;
+    tailsCount = 0;
+    
+    localStorage.setItem('heads', headsCount);
+    localStorage.setItem('tails', tailsCount);
+
+    document.getElementById('headsCount').textContent = headsCount;
+    document.getElementById('tailsCount').textContent = tailsCount;
+  }); 
 };
