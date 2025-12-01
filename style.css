@@ -41,6 +41,7 @@ body {
 /* === Stats Box === */
 .stats-box {
   margin-left: 40px;
+  margin-top: 60px;
   background-color: #ffffffcc;
   padding: 16px 24px;
   border-radius: 12px;
@@ -124,7 +125,7 @@ body {
 }
 
 .reset-oval {
-  margin-top: 40px;
+  margin-top: 60px;
   background-color: #a8e6cf; /* Soft green */
   padding: 20px 40px;
   border-radius: 50px;
@@ -147,3 +148,4 @@ body {
 #resetStreakButton:hover {
   background-color: #6f1bbd;
 }
+
