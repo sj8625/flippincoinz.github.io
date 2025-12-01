@@ -28,11 +28,9 @@ function flipCoin() {
     if (isHeads) {
       headsCount++;
       localStorage.setItem('heads', headsCount);
-      document.getElementById('headsCount').textContent = headsCount;
     } else {
       tailsCount++;
       localStorage.setItem('tails', tailsCount);
-      document.getElementById('tailsCount').textContent = tailsCount;
     }
 
     // ✅ Update streak counter
@@ -45,9 +43,9 @@ function flipCoin() {
 // ✅ Wrap all DOM-dependent logic inside window.onload
 // Display saved counts on page load
 window.onload = function () {
-  document.getElementById('headsCount').textContent = headsCount;
-  document.getElementById('tailsCount').textContent = tailsCount;
-  document.getElementById('streakCount').textContent = streakCount;
+
+
+
   
   // Auto-flip after 2 seconds
   setTimeout(() => {
@@ -57,22 +55,5 @@ window.onload = function () {
 // Flip on button click
 document.getElementById("flipButton").addEventListener("click", flipCoin);
 
-// ✅ Reset streak button logic — now inside onload
-  document.getElementById("resetStreakButton").addEventListener("click", () => {
-    streakCount = 0;
-    localStorage.setItem('streak', streakCount);
-    document.getElementById('streakCount').textContent = streakCount;
-  });
-  
-  // ✅ Reset stats button logic (Heads + Tails)
-  document.getElementById("resetStatsButton").addEventListener("click", () => {
-    headsCount = 0;
-    tailsCount = 0;
-    
-    localStorage.setItem('heads', headsCount);
-    localStorage.setItem('tails', tailsCount);
-
-    document.getElementById('headsCount').textContent = headsCount;
-    document.getElementById('tailsCount').textContent = tailsCount;
-  }); 
 };
+
