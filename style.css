@@ -90,9 +90,8 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(0);
   z-index: 2;
-  transform-origin: center center; /* ✅ Flip from the thumb */
-  transform-style: flat; /* 👈 Add this line */
-  transition: transform 1.5s ease-in-out;
+  transform-origin: center center;
+  transform-style: preserve-3d; /* 👈 change from flat */
 }
 
 .site-title {
@@ -109,3 +108,4 @@ body {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 100;
 }
+
