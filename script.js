@@ -36,7 +36,6 @@ function flipCoin() {
     // ✅ Update streak counter
     streakCount++;
     localStorage.setItem('streak', streakCount);
-    document.getElementById('streakCount').textContent = streakCount;
   }, 1500); // Match animation duration
 }
 
@@ -56,4 +55,5 @@ window.onload = function () {
 document.getElementById("flipButton").addEventListener("click", flipCoin);
 
 };
+
 
