@@ -3,6 +3,32 @@ let headsCount = parseInt(localStorage.getItem('heads')) || 0;
 let tailsCount = parseInt(localStorage.getItem('tails')) || 0;
 let streakCount = parseInt(localStorage.getItem('streak')) || 0;
 
+let chart;
+
+function renderChart() {
+  const ctx = document.getElementById('outcomeChart').getContext('2d');
+  chart = new Chart(ctx, {
+    type: 'pie', 
+    data: {
+      labels: ['Heads', 'Tails'],
+      datasets: [{
+        data: ['Heads', 'Tails'],
+        backgroundColor: ['#8a2be2', '#00bcd4'],
+        borderWidth: 1
+      }]
+    },
+    
+    options: {
+      responsive: false,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+}
+
 function flipCoin() {
   const isHeads = Math.random() < 0.5;
   const coin = document.getElementById("coin");
@@ -33,6 +59,9 @@ function flipCoin() {
       localStorage.setItem('tails', tailsCount);
     }
 
+    chart.data.datasets[0].data = [headsCount, tailsCount];
+    chart.update();
+
     // ✅ Update streak counter
     streakCount++;
     localStorage.setItem('streak', streakCount);
@@ -42,10 +71,8 @@ function flipCoin() {
 // ✅ Wrap all DOM-dependent logic inside window.onload
 // Display saved counts on page load
 window.onload = function () {
-
-
-
-  
+  renderChart();
+    
   // Auto-flip after 2 seconds
   setTimeout(() => {
     flipCoin(); // This calls the function after 2 seconds
@@ -53,7 +80,4 @@ window.onload = function () {
 
 // Flip on button click
 document.getElementById("flipButton").addEventListener("click", flipCoin);
-
 };
-
-
