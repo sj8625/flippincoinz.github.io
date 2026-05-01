@@ -12,7 +12,7 @@ function renderChart() {
     data: {
       labels: ['Heads', 'Tails'],
       datasets: [{
-        data: ['Heads', 'Tails'],
+        data: [headsCount, tailsCount],
         backgroundColor: ['#8a2be2', '#00bcd4'],
         borderWidth: 1
       }]
@@ -22,7 +22,11 @@ function renderChart() {
       responsive: false,
       plugins: {
         legend: {
-          position: 'bottom'
+          position: 'bottom',
+          align: 'end',
+          labels: {
+            padding: 20
+          }
         }
       }
     }
