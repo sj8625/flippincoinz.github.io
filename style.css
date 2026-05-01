@@ -110,9 +110,10 @@ body {
 }
 
 .chart-panel {
+  width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-left: 40px;
   margin-top: 0px; /* 👈 lowered from 20px or 60px */
   transform: translateY(-20px); /* 👈 nudges the whole box upward */
@@ -120,6 +121,8 @@ body {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-  width: 400px;
+#outcomeChart {
+  align-self: center;
 }
