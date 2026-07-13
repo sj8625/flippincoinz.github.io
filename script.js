@@ -23,7 +23,7 @@ function renderChart() {
       plugins: {
         legend: {
           position: 'bottom',
-          align: 'end',
+          align: 'start',
           labels: {
             padding: 20
           }
