@@ -117,6 +117,15 @@ body {
   align-items: flex-start;
 }
 
+.chart-left {
+  margin-right: 20px;
+}
+
+.chart-right {
+  display: flex;
+  flex-direction: column;
+}
+
 #outcomeChart {
   align-self: flex-start;
 }
