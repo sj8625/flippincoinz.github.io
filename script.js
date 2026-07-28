@@ -7,50 +7,38 @@ let chart;
 
 function renderChart() {
   const ctx = document.getElementById('outcomeChart').getContext('2d');
-  chart = new Chart(ctx, {
-    type: 'pie', 
-    data: data,
-    options: {
-      responsive: false,
-      plugins: {
-        legend: {
-          display: false,
-          position: 'right',
-          align: 'start',
-          labels: {
-            padding: 20
-          }
-        }
-      }
-    }
-});
 
-// 👇 Step 3 — manually place legend in the right column
-document.getElementById('chartLegend').innerHTML = myChart.generateLegend();
-  
-      labels: ['Heads', 'Tails'],
-      datasets: [{
+  const data = {
+    labels: ['Heads', 'Tails'],
+    datasets: [{
         data: [headsCount, tailsCount],
         backgroundColor: ['#8a2be2', '#00bcd4'],
         borderWidth: 1
-      }]
-    },
-    
-    options: {
-      responsive: false,
-      plugins: {
-        legend: {
-          display: false,
-          position: 'right',
-          align: 'start',
-          labels: {
-            padding: 20
-          }
+    }]
+  };
+
+  const options = {
+    responsive: false,
+    plugins: {
+      legend: {
+        display: false,   // Step 2: disable built-in legend
+        position: 'right',
+        align: 'start',
+        labels: {
+          padding: 20
         }
       }
     }
   });
-}
+
+  const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+  });
+
+  // Step 3: manually generate legend into the right column
+  document.getElementById('chartLegend').innerHTML = myChart.generateLegend();
 
 function flipCoin() {
   const isHeads = Math.random() < 0.5;
