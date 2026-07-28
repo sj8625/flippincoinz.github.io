@@ -112,15 +112,9 @@ body {
 .chart-panel {
   width: 500px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 40px;
-  margin-top: 0px; /* 👈 lowered from 20px or 60px */
-  transform: translateY(-20px); /* 👈 nudges the whole box upward */
-  background-color: #ffffffcc;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 #outcomeChart {
