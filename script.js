@@ -29,7 +29,7 @@ function renderChart() {
         }
       }
     }
-  });
+  };
 
   const myChart = new Chart(ctx, {
     type: 'pie',
