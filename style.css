@@ -110,7 +110,7 @@ body {
 }
 
 .chart-panel {
-  width: 400px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
