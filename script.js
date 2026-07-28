@@ -9,7 +9,25 @@ function renderChart() {
   const ctx = document.getElementById('outcomeChart').getContext('2d');
   chart = new Chart(ctx, {
     type: 'pie', 
-    data: {
+    data: data,
+    options: {
+      responsive: false,
+      plugins: {
+        legend: {
+          display: false,
+          position: 'right',
+          align: 'start',
+          labels: {
+            padding: 20
+          }
+        }
+      }
+    }
+});
+
+// 👇 Step 3 — manually place legend in the right column
+document.getElementById('chartLegend').innerHTML = myChart.generateLegend();
+  
       labels: ['Heads', 'Tails'],
       datasets: [{
         data: [headsCount, tailsCount],
@@ -22,6 +40,7 @@ function renderChart() {
       responsive: false,
       plugins: {
         legend: {
+          display: false,
           position: 'right',
           align: 'start',
           labels: {
