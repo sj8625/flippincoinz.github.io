@@ -22,11 +22,19 @@ function renderChart() {
       responsive: false,
       plugins: {
         legend: {
-          display: true
+          display: false
         }
       }
-    }
+    };
+
+  chart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options   
   });
+
+  // Generate legend into the right column
+  document.getElementById('chartLegend').innerHTML = chart.generateLegend();
 }
 
 function flipCoin() {
