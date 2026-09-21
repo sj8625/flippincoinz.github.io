@@ -149,3 +149,12 @@ body {
 #outcomeChart {
   align-self: flex-start;
 }
+
+.center-coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-frame: center;
+  width: 100%;
+  height: 100vh;
+}
