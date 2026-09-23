@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(50px); /* pushes the whole coin block downward */
+  transform: translateY(65px); /* pushes the whole coin block downward */
 }
 
 #hand {
