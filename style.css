@@ -57,13 +57,13 @@ body {
 
 @keyframes flipCoin {
   0% {
-    transform: translateX(-50%) translateY(0) rotateX(0deg);
+    transform: translateX(-50%) translateY(0) rotateZ(0deg);
   }
   50% {
-    transform: translateX(-50%) translateY(-150px) rotateX(180deg);
+    transform: translateX(-50%) translateY(-120px) rotateZ(720deg);
   }
   100% {
-    transform: translateX(-50%) translateY(0) rotateX(360deg);
+    transform: translateX(-50%) translateY(0) rotateZ(1440deg);
   }
 }
 
@@ -86,7 +86,7 @@ body {
 }
 
 #coin {
-  font-size: 2.5rem;
+  font-size: 4rem;
   position: absolute;
   top: -30px;
   left: 50%;
