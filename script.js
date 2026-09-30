@@ -47,8 +47,9 @@ function flipCoin() {
   void coin.offsetWidth;
 
   // Play animation
+  console.log("Animation started");
   coin.style.animation = "flipCoin 2s ease-in-out forwards";
-
+  
   setTimeout(() => {
     const outcome = isHeads ? "Heads" : "Tails";
     result.textContent = outcome;
