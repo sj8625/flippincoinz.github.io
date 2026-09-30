@@ -57,13 +57,23 @@ body {
 
 @keyframes flipCoin {
   0% {
-    transform: translateX(-50%) translateY(0) rotateZ(0deg);
+    transform: translateX(-50%) translateY(0px) rotateY(0deg);
   }
+
+  25% {
+    transform: translateX(-50%) translateY(-120px) rotateY(720deg);
+  }
+  
   50% {
-    transform: translateX(-50%) translateY(-120px) rotateZ(720deg);
+    transform: translateX(-50%) translateY(-180px) rotateY(1440deg);
   }
+
+  75% {
+    transform: translateX(-50%) translateY(-120px) rotateY(2160deg);
+  }
+  
   100% {
-    transform: translateX(-50%) translateY(0) rotateZ(1440deg);
+    transform: translateX(-50%) translateY(0px) rotateZ(2880deg);
   }
 }
 
@@ -93,7 +103,7 @@ body {
   transform: translateX(-50%) translateY(0);
   z-index: 2;
   transform-origin: center center;
-  transform-style: preserve-3d; /* 👈 change from flat */
+  transform-style: backface-visibility: hidden;
 }
 
 .site-title {
